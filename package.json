@@ -2,6 +2,7 @@
   "name": "@zos-apps/calculator",
   "version": "4.2.0",
   "description": "Beautiful calculator with standard and scientific modes",
+  "homepage": "https://zos-apps.github.io/calculator",
   "main": "src/index.tsx",
   "types": "src/index.tsx",
   "files": ["src"],
@@ -11,18 +12,35 @@
     "icon": "🧮",
     "category": "utilities",
     "permissions": [],
-    "installable": true
+    "installable": true,
+    "shortcut": "Cmd+C",
+    "menu": {
+      "help": {
+        "documentation": "https://zos-apps.github.io/calculator",
+        "reportIssue": "https://github.com/zos-apps/calculator/issues"
+      }
+    },
+    "contextMenu": [
+      {"label": "Open", "action": "open"},
+      {"label": "Open in New Window", "action": "openNew"},
+      {"type": "separator"},
+      {"label": "Get Info", "action": "getInfo"},
+      {"label": "Show in Finder", "action": "showInFinder"}
+    ]
   },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "lucide-react": ">=0.300.0"
   },
-  "keywords": ["zos", "app", "calculator"],
+  "keywords": ["zos", "app", "calculator", "macos", "desktop"],
   "author": "Hanzo AI",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zos-apps/calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zos-apps/calculator/issues"
   }
 }

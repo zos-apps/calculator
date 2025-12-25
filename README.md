@@ -1,8 +1,12 @@
 # 🧮 Calculator
 
+[![Version](https://img.shields.io/badge/version-4.2.0-blue.svg)](https://github.com/zos-apps/calculator/releases)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-online-purple.svg)](https://zos-apps.github.io/calculator)
+
 > Beautiful calculator with standard and scientific modes
 
-Part of the [zOS Apps](https://github.com/zos-apps) ecosystem.
+**[Documentation](https://zos-apps.github.io/calculator)** • **[App Store](https://zos-apps.github.io/app-store)** • **[All Apps](https://github.com/zos-apps)**
 
 ## Installation
 
@@ -10,37 +14,55 @@ Part of the [zOS Apps](https://github.com/zos-apps) ecosystem.
 npm install github:zos-apps/calculator
 ```
 
+Or install via the [zOS App Store](https://zos-apps.github.io/app-store).
+
 ## Usage
 
 ```tsx
-import App from '@zos-apps/calculator';
+import Calculator from '@zos-apps/calculator';
 
-function MyApp() {
-  return <App />;
+function App() {
+  return <Calculator />;
 }
 ```
 
-## Package Spec
+## Features
 
-App metadata is defined in `package.json` under the `zos` field:
+- Native zOS window integration
+- Dark mode support
+- Keyboard shortcuts (`Cmd+C`)
+- Context menu actions
+- Menu bar integration
 
-```json
-{
-  "zos": {
-    "id": "ai.hanzo.calculator",
-    "name": "Calculator",
-    "icon": "🧮",
-    "category": "utilities",
-    "permissions": [],
-    "installable": true
-  }
-}
-```
+## Keyboard Shortcuts
 
-## Version
+| Shortcut | Action |
+|----------|--------|
+| `Cmd+C` | Open Calculator |
 
-v4.2.0
+## Context Menu
+
+Right-click the app icon for:
+- **Open** - Launch the app
+- **Open in New Window** - Open a new instance
+- **Get Info** - View app details
+- **Show in Finder** - Locate app files
+
+## Menu Bar
+
+When active, adds menus: Calculator, File, Edit, View, Window, Help
+
+## Permissions
+
+No special permissions required.
+
+## Links
+
+- [Documentation](https://zos-apps.github.io/calculator)
+- [GitHub Repository](https://github.com/zos-apps/calculator)
+- [Report Issues](https://github.com/zos-apps/calculator/issues)
+- [All zOS Apps](https://github.com/zos-apps)
 
 ## License
 
-MIT © Hanzo AI
+MIT © [Hanzo AI](https://hanzo.ai)
