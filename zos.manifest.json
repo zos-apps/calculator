@@ -1,0 +1,14 @@
+{
+  "id": "ai.hanzo.calculator",
+  "name": "Calculator",
+  "version": "4.2.0",
+  "description": "Beautiful calculator with standard and scientific modes",
+  "icon": "🧮",
+  "category": "utilities",
+  "author": "Hanzo AI",
+  "repository": "https://github.com/zos-apps/calculator",
+  "minSdkVersion": "4.0.0",
+  "permissions": [],
+  "main": "src/index.tsx",
+  "installable": true
+}
