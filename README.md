@@ -13,10 +13,27 @@ npm install github:zos-apps/calculator
 ## Usage
 
 ```tsx
-import ZCalculator from '@zos-apps/calculator';
+import App from '@zos-apps/calculator';
 
-function App() {
-  return <ZCalculator />;
+function MyApp() {
+  return <App />;
+}
+```
+
+## Package Spec
+
+App metadata is defined in `package.json` under the `zos` field:
+
+```json
+{
+  "zos": {
+    "id": "ai.hanzo.calculator",
+    "name": "Calculator",
+    "icon": "🧮",
+    "category": "utilities",
+    "permissions": [],
+    "installable": true
+  }
 }
 ```
 
