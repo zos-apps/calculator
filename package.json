@@ -18,7 +18,27 @@
         "height": 400
       },
       "resizable": false
-    }
+    },
+    "about": "A simple calculator for basic math operations with a classic macOS design.",
+    "help": [
+      "Click buttons or use keyboard",
+      "AC clears all",
+      "C clears current entry"
+    ],
+    "docs": "https://zos-apps.github.io/calculator",
+    "site": "https://github.com/zos-apps/calculator",
+    "shortcuts": [
+      "0-9 Numbers",
+      "+-*/ Operations",
+      "Enter/= Equals",
+      "Esc Clear"
+    ],
+    "features": [
+      "Basic arithmetic",
+      "Percentage calculations",
+      "Memory functions",
+      "Keyboard support"
+    ]
   },
   "scripts": {
     "build": "tsup",
@@ -51,5 +71,13 @@
     "calculator",
     "macos",
     "desktop"
-  ]
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/zos-apps"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
 }
