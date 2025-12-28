@@ -1,5 +1,5 @@
 {
-  "name": "@anthropic/calculator",
+  "name": "@zos-apps/calculator",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
@@ -13,7 +13,10 @@
     "description": "A simple calculator for basic math operations",
     "permissions": [],
     "window": {
-      "defaultSize": { "width": 280, "height": 400 },
+      "defaultSize": {
+        "width": 280,
+        "height": 400
+      },
       "resizable": false
     }
   },
@@ -30,5 +33,23 @@
     "@types/react-dom": "^18.3.0",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
-  }
+  },
+  "description": "A simple calculator for basic math operations",
+  "homepage": "https://zos-apps.github.io/calculator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zos-apps/calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zos-apps/calculator/issues"
+  },
+  "author": "Hanzo AI",
+  "license": "MIT",
+  "keywords": [
+    "zos",
+    "app",
+    "calculator",
+    "macos",
+    "desktop"
+  ]
 }
