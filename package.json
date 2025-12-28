@@ -38,7 +38,29 @@
       "Percentage calculations",
       "Memory functions",
       "Keyboard support"
-    ]
+    ],
+    "screenshots": {
+      "hero": "screenshots/hero.png",
+      "images": [
+        "screenshots/1-basic.png",
+        "screenshots/2-scientific.png",
+        "screenshots/3-history.png"
+      ]
+    },
+    "downloads": {
+      "web": "https://zos-apps.github.io/calculator"
+    },
+    "featured": true,
+    "tags": [
+      "math",
+      "calculator",
+      "scientific",
+      "utility",
+      "productivity"
+    ],
+    "releaseDate": "2024-12-26",
+    "support": "https://github.com/zos-apps/calculator/issues",
+    "changelog": "https://github.com/zos-apps/calculator/releases"
   },
   "scripts": {
     "build": "tsup",
