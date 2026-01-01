@@ -1,10 +1,31 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
+import type { AppProps } from '@zos-apps/config';
+import { useKeyboard } from '@zos-apps/config';
 
-interface CalculatorProps {
-  onClose: () => void;
-}
+// Key mappings for calculator keyboard input
+const DIGIT_KEYS = {
+  '0': '0', '1': '1', '2': '2', '3': '3', '4': '4',
+  '5': '5', '6': '6', '7': '7', '8': '8', '9': '9',
+} as const;
 
-const Calculator: React.FC<CalculatorProps> = ({ onClose }) => {
+const OPERATION_KEYS = {
+  '+': '+', '-': '-', '*': '×', '/': '÷',
+  'x': '×', 'X': '×',
+} as const;
+
+const CONTROL_KEYS = {
+  '.': 'decimal',
+  ',': 'decimal',
+  'Enter': 'equals',
+  '=': 'equals',
+  'Escape': 'clear',
+  'c': 'clear',
+  'C': 'clear',
+  'Backspace': 'backspace',
+  '%': 'percent',
+} as const;
+
+const Calculator: React.FC<AppProps> = ({ onClose: _onClose }) => {
   const [display, setDisplay] = useState('0');
   const [previousValue, setPreviousValue] = useState<number | null>(null);
   const [operation, setOperation] = useState<string | null>(null);
@@ -34,6 +55,11 @@ const Calculator: React.FC<CalculatorProps> = ({ onClose }) => {
     setOperation(null);
     setWaitingForOperand(false);
   }, []);
+
+  const backspace = useCallback(() => {
+    if (waitingForOperand) return;
+    setDisplay(display.length > 1 ? display.slice(0, -1) : '0');
+  }, [display, waitingForOperand]);
 
   const toggleSign = useCallback(() => {
     const value = parseFloat(display);
@@ -80,6 +106,27 @@ const Calculator: React.FC<CalculatorProps> = ({ onClose }) => {
       setWaitingForOperand(true);
     }
   }, [display, previousValue, operation]);
+
+  // Keyboard support for digits
+  useKeyboard(DIGIT_KEYS, (digit) => {
+    inputDigit(digit);
+  });
+
+  // Keyboard support for operations
+  useKeyboard(OPERATION_KEYS, (op) => {
+    performOperation(op);
+  });
+
+  // Keyboard support for control keys
+  useKeyboard(CONTROL_KEYS, (action) => {
+    switch (action) {
+      case 'decimal': inputDecimal(); break;
+      case 'equals': equals(); break;
+      case 'clear': clear(); break;
+      case 'backspace': backspace(); break;
+      case 'percent': percentage(); break;
+    }
+  });
 
   const Button: React.FC<{
     label: string;
